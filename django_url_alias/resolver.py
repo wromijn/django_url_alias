@@ -18,8 +18,8 @@ class AliasedURLResolver(RegexURLResolver):
         return reverse_rewrite(path)
 
 
-def reverse(viewname, urlconf=None, args=None, kwargs=None, prefix=None, current_app=None):
-    path = base_reverse(viewname, urlconf=urlconf, args=args, kwargs=kwargs, prefix=prefix, current_app=current_app)
+def reverse(viewname, urlconf=None, args=None, kwargs=None, current_app=None):
+    path = base_reverse(viewname, urlconf=urlconf, args=args, kwargs=kwargs, current_app=current_app)
     return reverse_rewrite(path)
 
 
