@@ -12,7 +12,7 @@ def get_url_alias_modules(collect=None):
         module, attr = path[:i], path[i+1:]
         try:
             mod = import_module(module)
-        except ImportError, e:
+        except ImportError as e:
             raise ImproperlyConfigured('Error importing url alias module %s: "%s"' % (module, e))
         try:
             klass = getattr(mod, attr)
